@@ -5,7 +5,7 @@ steps:
 - task: Docker@2
   displayName: 'Build Container Image'
   inputs:
-    containerRegistry: metavscodehub
+    containerRegistry: VSCodeHub
     repository: 'vscode-linux-build-agent'
     Dockerfile: ${{ parameters.arch }}/Dockerfile
     buildContext: ${{ parameters.arch }}
@@ -14,7 +14,7 @@ steps:
 - task: Docker@2
   displayName: 'Push Container Image'
   inputs:
-    containerRegistry: metavscodehub
+    containerRegistry: VSCodeHub
     repository: 'vscode-linux-build-agent'
     tags: ${{ parameters.arch }}
     command: push
